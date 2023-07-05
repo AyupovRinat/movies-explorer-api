@@ -1,7 +1,5 @@
 const express = require('express');
-
 const mongoose = require('mongoose');
-const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
@@ -13,7 +11,6 @@ const NotFoundError = require('./errors/notFoundError');
 const { PORT = 3000, MONGO_URL = 'mongodb://127.0.0.1/bitfilmsdb' } = process.env;
 
 const app = express();
-app.use(cors());
 
 mongoose.connect(MONGO_URL)
   .then(() => console.log('База данных подключена'))
