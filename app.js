@@ -20,10 +20,10 @@ mongoose.connect(MONGO_URL)
   .then(() => console.log('База данных подключена'))
   .catch((err) => console.log('Ошибка подключения к базе данных', err));
 
-app.use(helmet());
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(helmet());
 
 app.use(requestLogger);
 
